@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHMAD Online Store</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f59236;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff7b54, #ff3d68);
+            color: #fff;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        header h2 {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffddc1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #ffede1;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            background-color: #ff7b54;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #ff3d68;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-card button {
+            background-color: #ff7b54;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #ff3d68;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Ahmad Online Store</h1>
+        <h2>AHMAD MART</h2>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Your Favorite Products, Just a Click Away</h2>
+        <p>Explore the best deals on the latest trends in fashion,perfumes,shoes,and more.</p>
+        <h1>SHOP NOW!</h1>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <h3>PERFUME</h3>
+            <img src="4.webp">
+            <p>Rs 8,500</p>
+            <button onclick="redirectToWhatsApp('PERFUME', 8500)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>CLOTHES</h3>
+          <img src="1.jpg">
+            <p>Rs 12,000</p>
+            <button onclick="redirectToWhatsApp('CLOTHES', 12000)">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <h3>SHOES</h3>
+            <img src="5.jpg">
+            <p>Rs 2,500</p>
+            <button onclick="redirectToWhatsApp('SHOES', 2500)">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer id="Contact">
+        <p>&copy; 2025 AHMAD Online Store. All rights reserved.</p>
+        <p>Contact us: razabrother21@gmail.com | +92 315 618 9713</p>
+    </footer>
+
+    <script>
+        function redirectToWhatsApp(product, price) {
+            const phoneNumber = "+923156189713"; 
+            const message = `Hello, I am interested in buying ${product} for Rs ${price}.`;
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+    </script>
+</body>
+</html>
